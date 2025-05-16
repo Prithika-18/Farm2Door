@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  background-color: #e5f1e5;
+  padding: 0.8rem 1rem;
+  transition: background-color 0.3s ease;
+}
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #4CAF50 !important;
+}
+.navbar-brand:hover {
+  color: #388E3C !important;
+}
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  color: #333 !important;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #4CAF50 !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #4CAF50;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar.fixed-top {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  font-weight: 60;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #4CAF50;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #menu-toggle:checked+.hamburger+.nav-links {
+    display: flex;
+  }
+}
+
+.contact-section {
+  background: linear-gradient(to bottom, #ffffff, #f0fdf4);
+  padding: 60px 0;
+}
+
+.contact-section h2 {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.contact-section p {
+  color: #666;
+}
+
+form .form-label {
+  font-weight: 500;
+  color: #2e7d32;
+}
+
+form .form-control {
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
+  padding: 12px;
+  transition: border 0.3s;
+}
+
+form .form-control:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 0 0.2rem rgba(102, 187, 106, 0.25);
+}
+
+.btn-success {
+  background-color: #4caf50;
+  border: none;
+  transition: background-color 0.3s ease;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.btn-success:hover {
+  background-color: #388e3c;
+}
+
+#form-alert {
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #2e7d32;
+  color: white;
+  padding: 20px 0;
+}
+
+footer .social-links a {
+  color: white;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: #c8e6c9;
+}
+
+.card {
+  background: linear-gradient(to bottom right, #c3cbc5, #b7e9c2);
+  border: 2px solid #a5d6a7;
+  border-radius: 15px;
+  box-shadow: 0 20px 10px rgba(152, 151, 151, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
+  background-color: #fefefe;
+  padding: 12px;
+}
+
+.form-control:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 0 0.2rem rgba(102, 187, 106, 0.2);
+}
+
+.contact-section h3 {
+  font-size: 1.8rem;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  height: 0;
+  max-width: 100%;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.card {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.location-details h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.location-details p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 100%;
+  height: 340px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.location-details {
+  font-size: 1.1rem;
+  color: #444;
+}

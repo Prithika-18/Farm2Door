@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="./products.css">
+  <link rel="icon" type="image/png" href="./imagesfarm/farmlogo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./imagesfarm/farmlogo.png" alt="Farm2Door Logo" style="height: 50px; margin-right: 10px;">
+          <span class="fw-bold text-success">Farm2Door</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carts.html">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">SignUp</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- products -->
+  <section class="py-5 text-center text-white" style="background-color: #4CAF50;">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Our Fresh Products</h1>
+      <p class="lead">Handpicked from local farms — healthy, organic, and delivered to your door.</p>
+    </div>
+  </section>
+  <!-- filters -->
+  <div class="text-center mb-4">
+    <div class="btn-group" role="group" aria-label="Category Filter">
+      <button class="btn btn-outline-success active" onclick="filterProducts('all')">All</button>
+      <button class="btn btn-outline-success" onclick="filterProducts('vegetables')">Vegetables</button>
+      <button class="btn btn-outline-success" onclick="filterProducts('fruits')">Fruits</button>
+      <button class="btn btn-outline-success" onclick="filterProducts('dairy')">Dairy</button>
+      <button class="btn btn-outline-success" onclick="filterProducts('grains')">Grains</button>
+      <button class="btn btn-outline-success" onclick="filterProducts('seasonal')">Seasonal</button>
+      <button class="btn btn-outline-success" onclick="filterProducts('organic')">Organic</button>
+    </div>
+  </div>
+  <!-- Product Grid -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 " style="color:#4CAF50;">All Products</h2>
+      <div class="row g-4">
+
+        <!-- Product Card 1 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item fruits organic seasonal">
+          <div class="card product-card h-100 ">
+            <img src="./imagesfarm/mango.jpg" class="card-img-top" alt="Mangoes">
+            <div class="card-body text-center">
+              <h5 class="card-title"> Organic Alphonso Mangoes </h5>
+              <p class="card-text">Pesticide-free and naturally ripened from Ratnagiri.</p>
+              <p class="text-success fw-bold">₹99 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="1" data-name="Organic Alphonso Mangoes"
+                data-price="99" data-quantity="1" data-unitType="kg" data-image="./imagesfarm/mango.jpg">
+
+                Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item dairy organic">
+          <div class="card product-card h-100 ">
+            <img src="./imagesfarm/freshmilk.jpg" class="card-img-top" alt="Fresh Milk">
+            <div class="card-body text-center">
+              <h5 class="card-title">Fresh Dairy Milk</h5>
+              <p class="card-text">Delivered within 12 hours of milking.</p>
+              <p class="text-success fw-bold">₹60 / litre</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="2" data-name="Fresh Dairy Milk"
+                data-price="60" data-quantity="1" data-unitType="litres" data-image="./imagesfarm/freshmilk.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables organic">
+          <div class="card product-card h-100  ">
+            <img src="./imagesfarm/spinach.jpg" class="card-img-top" alt="Spinach">
+            <div class="card-body text-center">
+              <h5 class="card-title">Organic Spinach</h5>
+              <p class="card-text">Chemical-free and rich in iron.</p>
+              <p class="text-success fw-bold">₹35 / bunch</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="3" data-name="Organic Spinach"
+                data-price="35" data-quantity="1" data-unitType="bunch" data-image="./imagesfarm/spinach.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item fruits">
+          <div class="card product-card h-100 ">
+            <img src="./imagesfarm/banana.jpg" class="card-img-top" alt="Bananas">
+            <div class="card-body text-center">
+              <h5 class="card-title">Farm Fresh Bananas</h5>
+              <p class="card-text">Naturally sweet and rich in potassium.</p>
+              <p class="text-success fw-bold">₹55 / dozen</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="4" data-name="farm Fresh Bananas"
+                data-price="55" data-quantity="1" data-unitType="dozen" data-image="./imagesfarm/banana.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 5 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables organic">
+          <div class="card product-card h-100 ">
+            <img src="./imagesfarm/tomato.jpg" class="card-img-top" alt="Tomatoes">
+            <div class="card-body text-center">
+              <h5 class="card-title">Organic Tomatoes</h5>
+              <p class="card-text">Juicy and grown without synthetic chemicals.</p>
+              <p class="text-success fw-bold">₹35 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="5" data-name="Organic Tomatoes"
+                data-price="35" data-quantity="1" data-unitType="kg" data-image="./imagesfarm/tomato.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 6 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item dairy organic">
+          <div class="card product-card h-100 ">
+            <img src="./imagesfarm/egg.jpg" class="card-img-top" alt="Eggs">
+            <div class="card-body text-center">
+              <h5 class="card-title">Free-Range Eggs</h5>
+              <p class="card-text">Protein-rich eggs from pasture-raised hens.</p>
+              <p class="text-success fw-bold">₹90 / dozen</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="6" data-name="Free-Range Eggs"
+                data-price="90" data-quantity="6" data-unitType="dozen" data-image="./imagesfarm/egg.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 7 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables">
+          <div class="card product-card h-100 ">
+            <img src="./imagesfarm/potato.jpg" class="card-img-top" alt="Potatoes">
+            <div class="card-body text-center">
+              <h5 class="card-title">Natural Potatoes</h5>
+              <p class="card-text">Earthy and perfect for everyday meals.</p>
+              <p class="text-success fw-bold">₹25 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="7" data-name="Natural Potatoes"
+                data-price="25" data-quantity="1" data-unitType="kg" data-image="./imagesfarm/potato.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 8 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item grains organic">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/basmathirice.jpg" class="card-img-top" alt="Basmati Rice">
+            <div class="card-body text-center">
+              <h5 class="card-title">Premium Basmati Rice</h5>
+              <p class="card-text">Long grain, fragrant and ideal for biryani.</p>
+              <p class="text-success fw-bold">₹120 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="8" data-name="Basmati Rice" data-price="120"
+                data-quantity="1" data-unitType="kg" data-image="./imagesfarm/basmathirice.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 9 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item fruits seasonal">
+          <div class="card product-card h-100  ">
+            <img src="./imagesfarm/tendercoconut.jpg" class="card-img-top" alt="Coconuts">
+            <div class="card-body text-center">
+              <h5 class="card-title">Tender Coconuts</h5>
+              <p class="card-text">Hydrating and full of natural electrolytes.</p>
+              <p class="text-success fw-bold">₹35 / piece</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="9" data-name="Tender Coconuts"
+                data-price="35" data-quantity="1" data-unitType="piece" data-image="./imagesfarm/tendercoconut.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 10 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables organic">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/carrot.jpg" class="card-img-top" alt="Carrots">
+            <div class="card-body text-center">
+              <h5 class="card-title">Crunchy Carrots</h5>
+              <p class="card-text">Rich in beta-carotene and grown without chemicals.</p>
+              <p class="text-success fw-bold">₹40 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="10" data-name="Crunchy Carrots"
+                data-price="40" data-quantity="1" data-unitType="kg" data-image="./imagesfarm/carrot.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 11 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item organic seasonal">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/honey.jpg" class="card-img-top" alt="Organic Honey">
+            <div class="card-body text-center">
+              <h5 class="card-title">Pure Organic Honey</h5>
+              <p class="card-text">Collected naturally, raw and unfiltered.</p>
+              <p class="text-success fw-bold">₹199 / 500g</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="11" data-name=" Pure Organic honey"
+                data-price="199" data-quantity="1" data-unitType="litres" data-image="./imagesfarm/honey.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 12 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables organic">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/beans.jpg" class="card-img-top" alt="Green Beans">
+            <div class="card-body text-center">
+              <h5 class="card-title">Green Beans</h5>
+              <p class="card-text">Freshly picked, rich in fiber and vitamins.</p>
+              <p class="text-success fw-bold">₹45 / 500g</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="12" data-name="Green Beans" data-price="45"
+                data-quantity="1" data-unitType="kg" data-image="./imagesfarm/beans.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 13 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables organic">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/onion.jpg" class="card-img-top" alt="Onions">
+            <div class="card-body text-center">
+              <h5 class="card-title">Organic Onions</h5>
+              <p class="card-text">Strong flavor, no artificial fertilizers.</p>
+              <p class="text-success fw-bold">₹30 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="13" data-name="Organic Onions"
+                data-price="30" data-quantity="1" data-unitType="kg" data-image="./imagesfarm/onion.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 14 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item vegetables seasonal">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/cucumber.jpg" class="card-img-top" alt="Cucumber">
+            <div class="card-body text-center">
+              <h5 class="card-title">Farm Cucumber</h5>
+              <p class="card-text">Crisp, cooling and hydrating perfect for salads.</p>
+              <p class="text-success fw-bold">₹25 / piece</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="14" data-name="Cucumber" data-price="25"
+                data-quantity="1" data-unitType="kg" data-image="./imagesfarm/cucumber.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 15 -->
+        <div class="col-lg-4 col-md-6 col-12 product-item grains organic">
+          <div class="card product-card h-100">
+            <img src="./imagesfarm/millet.jpg" class="card-img-top" alt="Millets">
+            <div class="card-body text-center">
+              <h5 class="card-title">Foxtail Millets</h5>
+              <p class="card-text">High in fiber and ideal for diabetic diets.</p>
+              <p class="text-success fw-bold">₹90 / kg</p>
+              <a href="#" class="btn btn-success add-to-cart-btn" data-id="15" data-name="Foxtail Millets"
+                data-price="90" data-quantity="1" data-unitType="kg" data-image="./imagesfarm/millet.jpg">
+                Add to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  function filterProducts(category) {
+    const buttons = document.querySelectorAll('.btn-group .btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    const items = document.querySelectorAll('.product-item');
+    items.forEach(item => {
+      if (category === 'all') {
+        item.style.display = 'block';
+      } else {
+        item.style.display = item.classList.contains(category) ? 'block' : 'none';
+      }
+    });
+  }
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const id = parseInt(this.getAttribute('data-id'));
+      const name = this.getAttribute('data-name');
+      const price = parseInt(this.getAttribute('data-price'));
+      const image = this.getAttribute('data-image');
+      const unitType = this.getAttribute('data-unitType');
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, name, price, image, quantity: 1, unitType });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart! ✅ `);
+
+    });
+  });
+</script>
+
+
+</html>
