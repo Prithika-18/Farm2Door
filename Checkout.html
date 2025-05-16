@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary,
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn-primary:hover,
+    .btn-success:hover {
+      background-color: #1e7e34;
+      border-color: #1c7430;
+    }
+
+    .card {
+      border-radius: 10px;
+      border: none;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .card-body p {
+      margin-bottom: 0.5rem;
+    }
+
+    .list-group-item {
+      border: none;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .list-group-item:last-child {
+      border-bottom: none;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-4,
+    .mb-4 {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-content {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Checkout</h2>
+    <div class="card shadow p-4">
+      <h4>Order Summary</h4>
+      <div id="cart-items"></div>
+      <hr>
+      <h5>Payment Method</h5>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="paymentMethod" id="cod" checked>
+        <label class="form-check-label" for="cod">Cash on Delivery</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="paymentMethod" id="online">
+        <label class="form-check-label" for="online">Online Payment</label>
+      </div>
+      <button class="btn btn-success mt-4 w-100" onclick="placeOrder()">Place Order</button>
+    </div>
+  </div>
+  <script>
+    let cart = [];
+    try {
+      const cartData = localStorage.getItem('cart');
+      if (cartData) {
+        cart = JSON.parse(cartData);
+        if (!Array.isArray(cart)) {
+          throw new Error('Cart data is not an array');
+        }
+      }
+    } catch (e) {
+      console.error('Error parsing cart data:', e);
+      localStorage.removeItem('cart');
+      cart = [];
+    }
+
+    function displayCart() {
+      const cartDiv = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        cartDiv.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+      let total = 0;
+      let html = '<ul class="list-group mb-3">';
+      cart.forEach(item => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+        html += `
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong>${item.name}</strong> (x${item.quantity})
+            </div>
+            <span>₹${subtotal}</span>
+          </li>`;
+      });
+      html += `</ul><div class="text-end"><strong>Total: ₹${total}</strong></div>`;
+      cartDiv.innerHTML = html;
+    }
+
+    function placeOrder() {
+      const method = document.querySelector('input[name="paymentMethod"]:checked').id;
+      if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before placing an order.");
+        return;
+      }
+      alert(`Order placed successfully using ${method === 'cod' ? 'Cash on Delivery' : 'Online Payment'} 🎉`);
+      localStorage.removeItem('cart');
+      window.location.href = 'index.html';
+    }
+
+    displayCart();
+  </script>
+</body>
+
+</html>
